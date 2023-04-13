@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block main %}
+    {% if not_available %}
+    <div class="container">
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            This username has already been chosen
+            <button class="btn-close" aria-label="close" data-bs-dismiss="alert"></button>
+        </div>
+    </div>
+    {% endif %}
+    <div class="container">
+        <form action="/register" method="post">
+            <div class="mb-3">
+                <input class="form-control w-auto mx-auto" type="text" name="username" autocomplete="off" placeholder="Username" minlength="5" required autofocus>
+            </div>
+            <div class="mb-3">
+                <input id="password" class="form-control w-auto mx-auto" type="password" name="password" placeholder="Password" minlength="8" required autofocus>
+            </div>
+            <div class="mb-3">
+                <input id="confirm_password" class="form-control w-auto mx-auto" type="password" name="confirmation" placeholder="Password (again)" minlength="8" required autofocus>
+            </div>
+            <button class="btn btn-primary" type="submit">Sign up</button>
+        </form>
+    </div>
+{% endblock %}

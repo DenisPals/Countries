@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %} Login {% endblock %}
+
+{% block main %}
+    {% if invalid %}
+    <div class="container">
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            Invalid login details
+            <button class="btn-close" aria-label="close" data-bs-dismiss="alert"></button>
+        </div>
+    </div>
+    {% endif %}
+    <div class="container">
+        <form action="/login" method="post">
+            <div class="mb-3">
+                <input class="form-control w-auto mx-auto" type="text" name="username" id="username" autocomplete="off" placeholder="Username" minlength="5" required autofocus>
+            </div>
+            <div class="mb-3">
+                <input class="form-control w-auto mx-auto" type="password" name="password" placeholder="Password" minlength="8" required autofocus>
+            </div>
+            <button class="btn btn-primary" type="submit">Login</button>
+            <div class="mt-2">
+                <a id="signup" href="/register">Sign up</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

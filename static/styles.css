@@ -1,0 +1,31 @@
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+
+/* Modify sign up link */
+#signup {
+    text-decoration: none;
+}
+#signup:hover {
+    text-decoration: underline;
+}
+
+.up {
+    color: green;
+}
+
+.down {
+    color: rgb(234, 0, 0);
+}
+
+.neutral {
+    color: rgb(103, 103, 92);
+}

@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}Countries{% endblock %}
+
+{% block main %}
+    <link rel="stylesheet" href="/static/styles.css">
+
+    <div class="container mb-2 mb-5">
+        <div class="alert alert-info" role="alert">
+            <h5>Overview</h5>
+            Trading Economics provides its users with accurate information for 196 countries including historical data and forecasts 
+            for more than 20 million economic indicators, exchange rates, stock market indexes, government bond yields and commodity 
+            prices.
+            The table below is a fun-size inside into Trading Economics comprehensive data sets.
+        </div>
+    </div>
+
+    <div class="container my-3">
+        <table class="table table-bordered">
+            <tbody>
+                <thead>
+                    <th>Country</th>
+                    <th>Currency</th>
+                    <th>GDP</th>
+                    <th>Unenployment Rate</th>
+                    <th>Inflation Rate</th>
+                    <th>Interest Rate</th>
+                    <th>Balance of Trade</th>
+                    <th>Consumer Confidence</th>
+                </thead>
+                {% for value in data %}
+                {% set ct = value["Country"] %}
+                <tr id="data_values">
+                    <th class="theader" id="{{ct}}">{{ct}}</th>
+                    <td class="currency" id="{{value['PV_currency']}}{{ct}}">{{ value["LV_currency"] }}</td>
+                    <td class="gdp" id="{{value['PV_gdp']}}{{ct}}">{{value["LV_gdp"]}}</td>
+                    <td class="unemployment" id="{{value['PV_unemployment']}}{{ct}}">{{value["LV_unemployment"]}}</td>
+                    <td class="inflationrate" id="{{value['PV_inflationrate']}}{{ct}}">{{value["LV_inflationrate"]}}</td>
+                    <td class="interestrate" id="{{value['PV_interestrate']}}{{ct}}">{{value["LV_interestrate"]}}</td>
+                    <td class="bot" id="{{value['PV_bot']}}{{ct}}">{{value["LV_bot"]}}</td>
+                    <td class="conconf" id="{{value['PV_conconf']}}{{ct}}">{{value["LV_conconf"]}}</td>
+                </tr> 
+                {% endfor %}
+                <script src="/static/calculate_values.js"></script>
+            </tbody>
+        </table>
+    </div>
+
+
+
+{% endblock %}
