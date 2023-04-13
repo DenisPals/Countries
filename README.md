@@ -1,5 +1,4 @@
-# YOUR PROJECT TITLE
-#### Video Demo:  <URL HERE>
+# Countries
 #### Description:
  
  **This Web Application was a project for my applicationa s a web developer at Trading Economics.**
