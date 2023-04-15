@@ -16,3 +16,4 @@ Challenging problems were:
 
 ## Where to find
 The web application can be viewed [here](https://countriesdp.herokuapp.com/). There may be a longer loading time when logging in because the API is limited to a certain number of request and multiple request are being send to fetch the economic data. 
+This is not the production repository, API keys, credentials, etc. have been omitted.

@@ -11,10 +11,10 @@ from helpers import login_required, check_connection
 
 # Connect to database
 database = mysql.connector.connect(
-    host ="eu-cdbr-west-03.cleardb.net",
-    user ="b69d1027663105",
-    password="13c208ed",
-    database="heroku_c53d3cdbf2e62b3"
+    host ="",
+    user ="",
+    password="",
+    database=""
 )
 
 # Set database cursor and let it return dict objects instead of tulpes
@@ -32,7 +32,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Log into API
-te.login('a1c5abfa1d174fc:oc90mhf4gbw0jtn')
+te.login('')
 
 # Declare empty list to cache JSON data
 data = []
