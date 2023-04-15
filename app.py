@@ -12,9 +12,9 @@ from helpers import login_required, check_connection
 # Connect to database
 database = mysql.connector.connect(
     host ="eu-cdbr-west-03.cleardb.net",
-    user ="bb989d462fa875",
-    password="68278a16",
-    database="heroku_9a92cf889ad5d2b"
+    user ="b69d1027663105",
+    password="13c208ed",
+    database="heroku_c53d3cdbf2e62b3"
 )
 
 # Set database cursor and let it return dict objects instead of tulpes
@@ -70,7 +70,7 @@ def register():
                 
         # Generate password hash
         password = generate_password_hash(password, method='pbkdf2:sha256', salt_length=8)
-
+        
         # Insert new user in database
         query = "INSERT INTO user_c (user_name, hash_value) VALUES (%s, %s)"
         val = (username, password)
@@ -108,6 +108,7 @@ def login():
         db.execute(query, val)
         rows = db.fetchall()
 
+        print(check_password_hash(rows[0]["hash_value"], request.form.get("password")))
         # Ensure username exists and password is correct
         if len(rows) != 1 or not check_password_hash(rows[0]["hash_value"], request.form.get("password")):
             return render_template("login.html", invalid=True)
