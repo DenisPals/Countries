@@ -15,4 +15,4 @@ Challenging problems were:
 **helpers.py** contains a decorater function and check_connection, a functio that pings the database to ensure connection and returns an error if no connection can be achieved.
 
 ## Where to find
-The web application can be viewed [here](https://countries-383616.ew.r.appspot.com/). There may be a longer loading time when logging in because the API is limited to a certain number of request and multiple request are being send to fetch the economic data. 
+The web application can be viewed [here](https://countriesdp.herokuapp.com/). There may be a longer loading time when logging in because the API is limited to a certain number of request and multiple request are being send to fetch the economic data. 
