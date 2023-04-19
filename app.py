@@ -32,7 +32,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Log into API
-te.login('')
+te.login('a1c5abfa1d174fc:oc90mhf4gbw0jtn')
 
 # Declare empty list to cache JSON data
 data = []
